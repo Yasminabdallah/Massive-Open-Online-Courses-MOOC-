@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     put "like" =>"lectures#upvote"
     put "dislike" =>"lectures#downvote"
+    put "spam" =>"lectures#spam"
 
     end
 

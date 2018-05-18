@@ -8,6 +8,15 @@ class LecturesController < InheritedResources::Base
 
   end
 
+  def spam
+  
+    @lecture = Lecture.find(params[:id]) 
+    @lecture.liked_by current_user
+    redirect_to lectures_path
+   
+
+  end
+
   def upvote
     @lecture = Lecture.find(params[:id]) 
     @lecture.upvote_by current_user
