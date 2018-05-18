@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Content:</strong>
+  <%= @lecture.content %>
+</p>
+<p>
+<strong>CreatedBy</strong>
+<%= User.find(@lecture.user_id).name%>
+</p>
+
+<p>
+<strong>CourseName</strong>
+<%= Course.find(@lecture.course_id).title%>
+</p>
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>
