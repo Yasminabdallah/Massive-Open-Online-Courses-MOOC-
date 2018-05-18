@@ -10,6 +10,8 @@
       <th>Course Name </th>
       <th>Created BY </th>
       <th>Lecture Download</th>
+      <th>Like</th>
+      <th>DisLike</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +27,18 @@
         <td><%= link_to 'Show', lecture %></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to   like_lecture_path(lecture), method: :put do %>
+         Like
+          <%= lecture.get_upvotes.size %>
+          <% end %>
+        </td>
+
+        <td> <%= link_to dislike_lecture_path(lecture), method: :put do %>
+          Dislike
+          <%= lecture.get_downvotes.size %>
+          <% end %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>

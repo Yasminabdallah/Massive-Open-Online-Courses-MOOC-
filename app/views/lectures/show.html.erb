@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-
+<h5>Info about lecture</h6>
 <p>
   <strong>Content:</strong>
   <%= @lecture.content %>
@@ -15,7 +15,7 @@
 <%= Course.find(@lecture.course_id).title%>
 </p>
 
-
+<hr>
 <%= commontator_thread(@lecture) %>
 <br>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |

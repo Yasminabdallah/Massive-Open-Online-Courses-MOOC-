@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
  
- 
-  resources :lectures
+  resources :lectures do
+    member do
+
+    put "like" =>"lectures#upvote"
+    put "dislike" =>"lectures#downvote"
+
+    end
+
+
+  end
   resources :courses
   get 'welcome/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
  
   root 'welcome#index'
   mount Commontator::Engine => '/commontator'

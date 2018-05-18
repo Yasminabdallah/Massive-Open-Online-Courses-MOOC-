@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :lectures
 
   acts_as_commontator
+  acts_as_voter
 
 
 end
