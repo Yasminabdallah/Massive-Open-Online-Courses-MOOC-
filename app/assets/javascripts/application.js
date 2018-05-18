@@ -11,5 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
+ //= require jquery_ujs
+//= require ckeditor-jquery
 //= require turbolinks
 //= require_tree .
+
+
+$('.ckeditor').ckeditor({
+    // optional config
+  })

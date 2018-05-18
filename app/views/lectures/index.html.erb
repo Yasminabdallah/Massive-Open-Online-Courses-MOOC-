@@ -20,7 +20,7 @@
     <% @lectures.each do |lecture| %>
       <tr>
      
-        <td><%= lecture.content %></td>
+        <td><%= lecture.content.html_safe %></td>
         <td><%= Course.find(lecture.course_id).title %></td>
         <td><%= User.find(lecture.user_id).name %></td>
         <td><%= link_to "Download ", lecture.file_url %></td>
