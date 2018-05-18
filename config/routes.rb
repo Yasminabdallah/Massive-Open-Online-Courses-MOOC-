@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+ 
   resources :lectures
   resources :courses
   get 'welcome/index'
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
 
  
   root 'welcome#index'
+  mount Commontator::Engine => '/commontator'
 end

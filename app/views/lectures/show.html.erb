@@ -14,5 +14,9 @@
 <strong>CourseName</strong>
 <%= Course.find(@lecture.course_id).title%>
 </p>
+
+
+<%= commontator_thread(@lecture) %>
+<br>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>
