@@ -25,6 +25,7 @@
 </div>
 <br>
 
+<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 
 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

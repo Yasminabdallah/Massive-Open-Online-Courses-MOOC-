@@ -13,13 +13,14 @@ ActiveAdmin.register User do
 # end
 
 
-permit_params :name,:email,:password,:gender,:date_of_birth,:avatar
+permit_params :name,:email,:password,:gender,:date_of_birth,:avatar,:role
 index do
     column :name
     column :email
     column :gender
     column :date_of_birth
     column :avatar
+    column :role
     column :created_at
    actions
   end
@@ -32,6 +33,7 @@ form do |f|
       f.input :password_confirmation
       f.input :date_of_birth
       f.input :gender
+      f.input :role
       f.input :avatar
       
     end

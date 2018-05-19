@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lectures</h1>
+<% if can? :create, Lecture%>
+<%= link_to 'New Lecture', new_lecture_path %>
+<% end %>
+<br>
 
 <table>
   <thead>
@@ -25,8 +29,12 @@
         <td><%= User.find(lecture.user_id).name %></td>
         <td><%= link_to "Download ", lecture.file_url %></td>
         <td><%= link_to 'Show', lecture %></td>
+        <% if can? :edit, Course %>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+        <% end %>
+        <% if can? :destroy, Course %>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
         <td><%= link_to   like_lecture_path(lecture), method: :put do %>
          Like
           <%= lecture.get_upvotes.size %>
@@ -46,4 +54,4 @@
 
 <br>
 
-<%= link_to 'New Lecture', new_lecture_path %>
+
