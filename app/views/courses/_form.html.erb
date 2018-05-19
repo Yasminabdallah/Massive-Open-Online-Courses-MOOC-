@@ -16,10 +16,10 @@
     <%= form.text_field :title, id: :course_title %>
   </div>
 
+ 
   <div class="field">
-    <%= form.label :user_id %>
-    
-    <%= form.select :user_id, User.all.collect { |user| [user.name,user.id]} %>
+ 
+  <%=  User.find(current_user.id).name %>
   </div>
 
  

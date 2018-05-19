@@ -8,10 +8,30 @@ class LecturesController < InheritedResources::Base
 
   end
 
+  def new
+    @lecture = Lecture.new
+    
+  end
+
+  def create
+    @lecture= Lecture.new(lecture_params)
+    @lecture.user_id=current_user.id
+
+    respond_to do |format|
+      if @lecture.save
+        format.html { redirect_to @lecture, notice: 'Book was successfully created.' }
+        format.json { render :show, status: :created, location: @lecture }
+      else
+        format.html { render :new }
+        format.json { render json: @lecture.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def spam
   
-    @lecture = Lecture.find(params[:id]) 
-    @lecture.liked_by current_user
+    lecture = Lecture.find(params[:id]) 
+    current_user.lectures << lecture unless current_user.lectures.include?(lecture)
     redirect_to lectures_path
    
 

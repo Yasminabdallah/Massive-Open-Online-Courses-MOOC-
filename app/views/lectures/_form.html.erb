@@ -12,6 +12,7 @@
   <% end %>
 
   <%= form.label :lecture %><br />
+
   <div class="field">
   <%= form.file_field :file %><br />
   </div>
@@ -22,10 +23,6 @@
     <%= form.text_area :content, id: :lecture_content, :class => 'ckeditor' %>
   </div>
   
- 
-  
- 
-
   <div class="field">
   <%= form.label :course_id %>
   
@@ -33,11 +30,20 @@
   </div>
 
   <div class="field">
-  <%= form.label :user_id %>
-  <%= form.select :user_id, User.all.collect { |user| [user.name,user.id]} %>
+ 
+   
+  <%=  User.find(current_user.id).name %>
   </div>
+
+  
+
+ 
+
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  
+  
 <% end %>

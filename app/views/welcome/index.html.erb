@@ -8,17 +8,18 @@
         
  
             <% if current_user %>
-          <%= image_tag current_user.avatar.url, width: '40%'%>
-           
-         
+                <%= image_tag current_user.avatar.url, width: '40%'%>
+                <div><%= link_to 'Edit Profile',edit_user_registration_path %></div>
+                <div><%= link_to 'Logout', destroy_user_session_path, method: :delete %></div>
+                <div><%= link_to 'lectures',lectures_path %></div>
+                <div><%= link_to 'Login', new_user_session_path %></div>
+             <% else %>
+
                 <div><%= link_to 'courses',courses_path %></div>
             
                 <div><%= link_to 'lectures',lectures_path %></div>
-                
-                <div><%= link_to 'Edit Profile',edit_user_registration_path %></div>
-                <div><%= link_to 'Logout', destroy_user_session_path, method: :delete %></div>
-            <% else %>
                 <div><%= link_to 'Login', new_user_session_path %></div>
+           
             <% end %>
         </ul>
     </div>

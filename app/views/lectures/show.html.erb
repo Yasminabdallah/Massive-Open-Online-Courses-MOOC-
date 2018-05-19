@@ -1,11 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h5>Info about lecture</h6>
-<td><%= link_to  spam_lecture_path(@lecture), method: :put do %>
+<h5>Info about lecture</h5>
+
+<%= link_to spam_lecture_path(@lecture) , method: :post do%>
   Spam
-   
+   <% unless current_user.lectures.include?(@lecture) %>
+        <%= 0 %>
+   <% else %>
+        <%= 1 %>
    <% end %>
- </td>
+<% end %>
+
+
 <p>
   <strong>Content:</strong>
   <%= @lecture.content.html_safe%>
