@@ -8,6 +8,7 @@ class User < ApplicationRecord
  
   has_many :courses
   has_many :lectures
+  has_and_belongs_to_many :lectures
 
   acts_as_commontator
   acts_as_voter

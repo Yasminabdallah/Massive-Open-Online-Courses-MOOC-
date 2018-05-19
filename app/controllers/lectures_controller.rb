@@ -8,10 +8,7 @@ class LecturesController < InheritedResources::Base
 
   end
 
-  def new
-    @lecture = Lecture.new
-    
-  end
+ 
 
   def create
     @lecture= Lecture.new(lecture_params)

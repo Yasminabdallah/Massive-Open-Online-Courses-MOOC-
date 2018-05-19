@@ -6,6 +6,7 @@ class CoursesController < InheritedResources::Base
     @course = Course.new
    
   end
+  
   def create
     @course= Course.new(course_params)
     @course.user_id=current_user.id
