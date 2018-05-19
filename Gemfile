@@ -37,6 +37,9 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'carrierwave', '~> 1.0'
 gem 'ckeditor_rails'
 gem 'mini_magick'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 
 
 # Use Capistrano for deployment

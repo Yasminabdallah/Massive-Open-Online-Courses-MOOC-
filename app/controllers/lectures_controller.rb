@@ -1,5 +1,5 @@
 class LecturesController < InheritedResources::Base
-  before_action :authenticate_user!,only: [:upvote,:downvote]
+  before_action :authenticate_user! , only: [:upvote,:downvote]
 
 
 

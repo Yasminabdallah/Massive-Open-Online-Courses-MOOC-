@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<h1 align="center">Course Details</h1>
+<br>
+<br>
 <p>
   <strong>Title:</strong>
   <%= @course.title %>
@@ -10,7 +12,7 @@
   <%= User.find(@course.user_id).name%>
 </p>
 
-<table>
+<table class="table">
 <thead>
   <tr>
     <th>lecturesName</th>

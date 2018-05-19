@@ -7,8 +7,14 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.is? :author
       can :manage, Course
-    else
+      can :manage, Lecture
+    elsif user.is? :student
       can :read, Course
+      can :read, Lecture
+    else 
+      cannot :read ,Course
+      cannot :read ,Lecture
+      
     end
     
     # Define abilities for the passed in user here. For example:

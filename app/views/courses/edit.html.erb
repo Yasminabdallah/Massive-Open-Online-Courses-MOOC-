@@ -6,7 +6,7 @@
 <%= link_to 'Back', courses_path %>
 
 <%end %>
-<% if cannot? :edit , @user %>
+<% if cannot? :edit , Course %>
   <span class="permission-message">You aren't allowed to edit this lecture.</span>
 <% end %>
 

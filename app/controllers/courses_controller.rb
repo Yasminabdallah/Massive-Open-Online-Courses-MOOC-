@@ -1,5 +1,5 @@
 class CoursesController < InheritedResources::Base
-  before_action :authenticate_user!
+  
  
  
 

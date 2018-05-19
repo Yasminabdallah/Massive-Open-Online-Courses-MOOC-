@@ -1,15 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h5>Info about lecture</h5>
-
-<%= link_to spam_lecture_path(@lecture) , method: :post do%>
-  Spam
+<h1 align="center">Info about lecture</h1>
+  <% if can? :read,Lecture %> 
+  <%= button_to spam_lecture_path(@lecture) , method: :post do%>
+    Spam
    <% unless current_user.lectures.include?(@lecture) %>
         <%= 0 %>
    <% else %>
         <%= 1 %>
    <% end %>
-<% end %>
+
+
+  <% end %>
+
+ 
+  <% end %>
+
+<br>
+<br>
 
 
 <p>

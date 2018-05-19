@@ -1,11 +1,13 @@
-<h1>Editing Lecture</h1>
-<% if can? :edit, Course %>
+<h1 align="center">Editing Lecture</h1>
+<% if can? :edit, Lecture %>
 <%= render 'form', lecture: @lecture %>
 
 <%= link_to 'Show', @lecture %> |
 <%= link_to 'Back', lectures_path %>
 <% end%>
 
-<% if cannot? :edit , @user %>
-  <span class="permission-message">You aren't allowed to edit this lecture.</span>
+<br>
+
+<% if cannot? :edit ,Lecture%>
+  <span class="permission-message">You aren't allowed to edit this course.</span>
 <% end %>

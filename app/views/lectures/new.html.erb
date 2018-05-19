@@ -1,10 +1,11 @@
-<h1>New Lecture</h1>
-<% if can? :create, Course %>
+<h1 align="center">New Lecture</h1>
+<% if can? :create, Lecture %>
 
 <%= render 'form', lecture: @lecture %>
 
 <%= link_to 'Back', lectures_path %>
 <% end %>
-<% if cannot? :create , @user %>
-  <span class="permission-message">You aren't allowed to create new lecture.</span>
+
+<% if cannot? :create , Lecture %>
+  <span class="permission-message"> You aren't allowed to create new course.</span>
 <% end %>

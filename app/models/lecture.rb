@@ -1,5 +1,5 @@
 class Lecture < ApplicationRecord
-    validates :file, :content, presence: true
+    validates :content, presence: true
     belongs_to :course
     belongs_to :user
     acts_as_commontable
